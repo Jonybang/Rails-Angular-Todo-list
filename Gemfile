@@ -66,3 +66,17 @@ gem 'responders', '2.1.2'
 # Формирование JSON API
 gem 'rabl', '0.12.0'
 gem 'oj', '2.15.0'
+
+	group :development do
+		gem 'capistrano',         require: false
+		gem 'capistrano-rvm',     require: false
+		gem 'capistrano-rails',   require: false
+		gem 'capistrano-bundler', require: false
+		gem 'capistrano3-puma',   require: false
+		gem 'capistrano-secrets-yml', '~> 1.0.0'
+		gem 'capistrano-postgresql'
+	end
+
+	gem 'puma'
+	gem 'dotenv-rails', :require => 'dotenv/rails-now'
+
