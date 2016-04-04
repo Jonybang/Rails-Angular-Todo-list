@@ -79,3 +79,4 @@ gem 'oj', '2.15.0'
 	gem 'puma'
 	gem 'dotenv-rails', :require => 'dotenv/rails-now'
 
+	gem 'pg'

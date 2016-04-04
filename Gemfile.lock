@@ -118,6 +118,7 @@ GEM
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     oj (2.15.0)
+    pg (0.18.4)
     puma (3.2.0)
     rabl (0.12.0)
       activesupport (>= 2.3.14)
@@ -216,6 +217,7 @@ DEPENDENCIES
   modernizr-rails (= 2.7.1)
   ng-rails-csrf (= 0.1.0)
   oj (= 2.15.0)
+  pg
   puma
   rabl (= 0.12.0)
   rails (= 4.2.6)
