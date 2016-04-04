@@ -66,7 +66,6 @@ gem 'responders', '2.1.2'
 # Формирование JSON API
 gem 'rabl', '0.12.0'
 gem 'oj', '2.15.0'
-
 	group :development do
 		gem 'capistrano',         require: false
 		gem 'capistrano-rvm',     require: false
