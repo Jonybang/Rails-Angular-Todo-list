@@ -52,9 +52,9 @@
 		desc 'Make sure local git is in sync with remote.'
 		task :check_revision do
 		  on roles(:app) do
-		    unless 8e4eb6fcdb31747992625f5b8b38a1e382d00a92 == d7aca1405a91014dbbd0d191add09cd5866a52b6
+		    unless `git rev-parse HEAD` == `git rev-parse origin/master`
 		      puts 'WARNING: HEAD is not the same as origin/master'
-		      puts 'Run  to sync changes.'
+		      puts 'Run `git push` to sync changes.'
 		      exit
 		    end
 		  end
