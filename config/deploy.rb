@@ -52,7 +52,7 @@
 		desc 'Make sure local git is in sync with remote.'
 		task :check_revision do
 		  on roles(:app) do
-		    unless 11478496e75bb00bcd37c3a8a7df3f365b174335 == 11478496e75bb00bcd37c3a8a7df3f365b174335
+		    unless d7aca1405a91014dbbd0d191add09cd5866a52b6 == d7aca1405a91014dbbd0d191add09cd5866a52b6
 		      puts 'WARNING: HEAD is not the same as origin/master'
 		      puts 'Run  to sync changes.'
 		      exit
