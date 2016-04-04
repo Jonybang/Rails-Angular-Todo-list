@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AngularExample</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <base href="/">
+</head>
+<body>
+
+<%= yield %>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <div class="navbar-left">
+      <p class="margin-top">
+        Angular + Rails 4 Example TODO-List application by jonybange@gmail.com. DRY and best practices.
+      </p>
+    </div>
+
+    <div class="navbar-header pull-right">
+      <a class="navbar-brand" href="https://github.com/Jonybang/Rails-Angular-Todo-list" target="_blank" style="padding: 2px;">
+        <img class="img-responsive" style="height: 50px;" alt="Github" src="/img/github.png">
+      </a>
+    </div>
+  </div>
+</nav>
+</body>
+</html>

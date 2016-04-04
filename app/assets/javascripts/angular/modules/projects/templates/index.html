@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">Проекты</div>
+            <div class="panel-body">
+                <p>Выберите или добавьте проект</p>
+            </div>
+
+            <div class="list-group">
+                <a href ng-repeat="project in projects" ui-sref="app.projects.show.tasks({projectId: project.id})" ng-class="['list-group-item', {'active':project.id == cur_project_id}]">
+                    {{project.name}}
+                </a>
+            </div>
+            <div class="panel-body">
+                <form ng-submit="addProject()">
+                    <div class="input-group">
+                        <input type="text" ng-model="new_project" class="form-control" placeholder="Добавить новый проект">
+                        <span class="input-group-btn">
+                            <button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-plus"></span></button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <ui-view></ui-view>
+    </div>
+</div>

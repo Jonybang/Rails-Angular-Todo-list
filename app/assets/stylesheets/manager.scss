@@ -1,0 +1,47 @@
+// Place all the styles related to the manager controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//= require select.min
+//= require animate.min
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.strikethrough{
+  text-decoration:line-through;
+}
+.inline-block{
+  display: inline-block;
+}
+.inline-block .input-sm {
+  width: 350px;
+}
+
+ul[dnd-list], ul[dnd-list] > li {
+  position: relative;
+}
+
+ul[dnd-list] .dndDraggingSource {
+  display: none;
+}
+ul[dnd-list] .dndPlaceholder {
+  display: block;
+  background-color: #ddd;
+  min-height: 42px;
+}
+
+ul[dnd-list] li {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+}
+
+ul[dnd-list] li.selected {
+  background-color: #dff0d8;
+  color: #3c763d;
+}

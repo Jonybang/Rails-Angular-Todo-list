@@ -1,0 +1,51 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <p>{{ project.description || 'Задачи можно перетаскивать, редактировать(двойной щелчок, потом Enter или иконками), удалять, завершать.' }}</p>
+        <form ng-submit="addTask()">
+            <div class="input-group">
+                <input type="text" ng-model="new_task" class="form-control" placeholder="Создать новую">
+                <span class="input-group-btn">
+                    <button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-plus"></span></button>
+                </span>
+            </div>
+        </form>
+    </div>
+
+    <ul class="list-group"
+
+        dnd-list="project.tasks">
+        <li href
+            class="list-group-item"
+
+            ng-repeat="task in project.tasks"
+            ng-dblclick="task.edit = !task.edit;"
+
+            dnd-draggable="task"
+            dnd-moved="taskMoved($index)"
+            dnd-effect-allowed="move"
+            >
+
+            <div class="pull-right">
+                <!--Normal mode (edit icon)-->
+                <a ng-hide="task.edit" ng-click="task.edit = true;" href><span class="glyphicon glyphicon-pencil"></span></a>
+
+                <!--Edit mode (save icon)-->
+                <a ng-show="task.edit" ng-click="changeTask(task)" href><span class="glyphicon glyphicon-floppy-disk"></span></a>
+
+                <!--Both modes (delete icon)-->
+                <a delete-object="task" delete-success="project.tasks.splice($index, 1)" href><span class="glyphicon glyphicon-remove"></span></a>
+            </div>
+
+            <input class="inline-block" type="checkbox" ng-model="task.is_complete" ng-change="changeTask(task)">
+
+            <!--Normal mode (text)-->
+            <span ng-hide="task.edit" ng-class="{'strikethrough':task.is_complete}">{{task.name}}</span>
+
+            <!--Edit mode (text input)-->
+            <form ng-submit="changeTask(task)" class="inline-block">
+                <input ng-show="task.edit" ng-model="task.name" focus-me="task.edit" type="text" class="form-control input-sm">
+            </form>
+
+        </li>
+    </ul>
+</div>
